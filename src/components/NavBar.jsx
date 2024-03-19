@@ -4,7 +4,7 @@ function NavBar() {
     return (
         <nav className="navbar">
         <div className="container">
-            <div className="navbar-brand">Our Logo</div>
+            <div className="navbar-brand">Simply Shopping</div>
             <div className="navbar-menu">
             <div className="navbar-start">
                 {/* Dropdown for categories */}
