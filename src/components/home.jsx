@@ -4,10 +4,12 @@ import Descriptions from './Descriptions';
 import Products from './Products';
 import NavBar from './NavBar';
 
+
 const Home = () => {
     return (
         <div className="categories-container">
             Home Page
+            <NavBar />
         </div>
     )
 }
