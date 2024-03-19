@@ -35,5 +35,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "Group Milestone Project 3 (Final)",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "keywords": []
 }
