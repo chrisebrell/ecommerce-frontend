@@ -1,4 +1,4 @@
-import './styles.css';
+import './navbar.styles.css';
 import Home from './components/home';
 
 function App() {
