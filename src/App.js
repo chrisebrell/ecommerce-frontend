@@ -1,5 +1,6 @@
 import './styles.css';
 import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import './navbar.styles.css';
 import Home from './components/home';
 import Products from './components/products';
 import NavBar from './components/NavBar';
