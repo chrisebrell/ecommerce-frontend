@@ -48,7 +48,7 @@ function NavBar() {
     return (
         <nav className="navbar">
         <div className="container">
-            <div className="navbar-brand">Simply Shopping</div>
+            <div className="navbar-brand"><a href='/'>Simply Shopping</a></div>
             <div className="navbar-menu">
             <div className="navbar-start">
                 {/* Dropdown for categories */}
@@ -65,6 +65,10 @@ function NavBar() {
             {/* Search bar */}
             <div className="navbar-item">
                 <input type="text" placeholder="Search" />
+            </div>
+            {/* Shop */}
+            <div className="navbar-item">
+                <a href="/products" className="button">Shop</a>
             </div>
             {/* User sign-in */}
             <div className="navbar-item">
