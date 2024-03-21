@@ -1,5 +1,5 @@
 import React from 'react';
-import '../categories.style.scss'
+import '../styles/categories.style.scss'
 
 const Categories = () => {
     const categories = [
@@ -10,21 +10,26 @@ const Categories = () => {
         },
         {
           "id": 2,
+          "title": "Kitchen",
+          "imageUrl": "https://images.unsplash.com/photo-1556912173-46c336c7fd55?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGtpdGNoZW58ZW58MHx8MHx8fDA%3D"
+        },
+        {
+          "id": 3,
           "title": "Clothing",
           "imageUrl": "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xvdGhpbmd8ZW58MHx8MHx8fDA%3D"
         },
         {
-          "id": 3,
+          "id": 4,
           "title": "Electronics & Accessories",
           "imageUrl": "https://images.unsplash.com/photo-1593344484962-796055d4a3a4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGVsZWN0cm9uaWNzfGVufDB8fDB8fHww"
         },
         {
-          "id": 4,
+          "id": 5,
           "title": "Art & Collectibles",
           "imageUrl": "https://images.unsplash.com/photo-1695142258314-180ea86bdb48?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGFydCUyMGNvbGxlY3RpYmxlc3xlbnwwfHwwfHx8MA%3D%3D"
         },
         {
-          "id": 5,
+          "id": 6,
           "title": "Toys & Games",
           "imageUrl": "https://media.istockphoto.com/id/667108156/photo/colorful-plastic-toys-in-childrens-room.webp?b=1&s=170667a&w=0&k=20&c=GUWvypsmaA369EL5uCdGjo5TKxCw98hP-_6rgwHmJUI="
         }

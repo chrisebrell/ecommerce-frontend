@@ -1,0 +1,60 @@
+[
+    {
+      "id": 1,
+      "name": "T-shirt",
+      "imageUrl": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "price": 25
+    },
+    {
+      "id": 2,
+      "name": "Blue Beanie",
+      "imageUrl": "https://images.unsplash.com/photo-1519663412347-41822a105815?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Ymx1ZSUyMGJlYW5pZXxlbnwwfHwwfHx8MA%3D%3D",
+      "price": 18
+    },
+    {
+      "id": 3,
+      "name": "Strawberry Shirt",
+      "imageUrl": "https://i.etsystatic.com/7848321/r/il/8ac192/1123479697/il_794xN.1123479697_tqta.jpg",
+      "price": 35
+    },
+    {
+      "id": 4,
+      "name": "Pizza Shirt",
+      "imageUrl": "https://i.etsystatic.com/7848321/r/il/537da0/917806514/il_340x270.917806514_4tu0.jpg",
+      "price": 25
+    },
+    {
+      "id": 5,
+      "name": "Hooded Sweatshirt",
+      "imageUrl": "https://i.etsystatic.com/26154193/r/il/c010d3/5580221276/il_794xN.5580221276_89os.jpg",
+      "price": 18
+    },
+    {
+      "id": 6,
+      "name": "Plant Lover Shirt",
+      "imageUrl": "https://i.etsystatic.com/28902272/c/1257/999/349/123/il/8098f3/3927270769/il_340x270.3927270769_pefb.jpg",
+      "price": 14
+    },
+    {
+      "id": 7,
+      "name": "Unisex Sweatshirt",
+      "imageUrl": "https://i.etsystatic.com/44617095/r/il/a226a5/5837356768/il_794xN.5837356768_tt2j.jpg",
+      "price": 18,
+      "description": "Looking for a comfortable and durable t-shirt that can withstand your busy lifestyle? Look no further than our premium cotton t-shirt, made from the highest quality combed cotton and featuring a tight-knit construction and double yarn spinning technology. This t-shirt provides unbeatable comfort and long-lasting wear, with a neckline that never loses its shape and a fabric that's thick, non-transparent, and breathable."
+    },
+    {
+      "id": 8,
+      "name": "Positive Graphic Tees",
+      "imageUrl": "https://i.etsystatic.com/26391688/r/il/e1970e/5018821510/il_794xN.5018821510_k2ts.jpg",
+      "price": 14,
+      "description": "Inspirational Clothes, Positive Graphic Tees, Have The Day You Deserve Shirt, Kindness Gift. How to Order👕🎨 .Visit all the photos you are interested in."
+    },
+    {
+      "id": 9,
+      "name": "Yin Yang Cat T-Shirt",
+      "imageUrl": "https://i.etsystatic.com/15424016/r/il/25aa8a/4160476204/il_794xN.4160476204_6hsd.jpg",
+      "price": 16,
+      "description": "100% Combed ringspun cotton. Long lasting comfortable tee and easy to wash. Professional, high quality long lasting print. Reminder that anything other than black white & grey may take an extra day to ship out!"
+    }
+  ]
+  
