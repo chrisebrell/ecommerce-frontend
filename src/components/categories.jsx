@@ -15,7 +15,7 @@ const Categories = () => {
         },
         {
           "id": 3,
-          "title": "Clothing",
+          "title": "Women's Clothing",
           "imageUrl": "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xvdGhpbmd8ZW58MHx8MHx8fDA%3D"
         },
         {
@@ -30,8 +30,8 @@ const Categories = () => {
         },
         {
           "id": 6,
-          "title": "Toys & Games",
-          "imageUrl": "https://media.istockphoto.com/id/667108156/photo/colorful-plastic-toys-in-childrens-room.webp?b=1&s=170667a&w=0&k=20&c=GUWvypsmaA369EL5uCdGjo5TKxCw98hP-_6rgwHmJUI="
+          "title": "Men's Clothing",
+          "imageUrl": "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWVucyUyMGNsb3RoaW5nfGVufDB8fDB8fHww"
         }
       ]
 
