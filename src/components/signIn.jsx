@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
 
 const SignInPage = () => {
-// State variables to hold user input
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
 
 // Function to handle form submission
 const handleSubmit = (event) => {
     event.preventDefault();
-    // Here you can add logic to authenticate the user using the entered email and password
     console.log('Email:', email);
     console.log('Password:', password);
-    // Reset form fields after submission
     setEmail('');
     setPassword('');
 };

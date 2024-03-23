@@ -48,6 +48,7 @@
 
 .navbar a {
     color: #2692d6;
+    line-height: 1.5;
 }
 
 .navbar-link {
@@ -55,8 +56,22 @@
 }
 
 .button {
+    background-color: transparent;
+    border: none;
+    color: #2692d6;
+    /* Same color as navbar links */
+    cursor: pointer;
+    font-size: inherit;
+    padding: 10px;
+    /* Adjust padding to match other navbar items */
     text-decoration: none;
+    transition: background-color 0.3s;
 }
+
+.button:hover {
+    background-color: #f0f0f0;
+}
+
 .cart-bubble {
     position: relative;
 }
