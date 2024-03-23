@@ -25,7 +25,8 @@
         bottom: 22%;
         cursor: pointer;
         &:hover {
-            background-color: black;
+            background-color: #2692d6;
+            border: solid #2692d6 1px;
             color: white;
         }
     }

@@ -21,7 +21,6 @@ const ProductCard = ({ product }) => {
             <div className="product-card-container">
                <img className='product-image' src={imageUrl}  alt={`${name}`} />
                <div className="product-detail">
-                   {/* <span>{name.substr(0, 30)}</span>  */}
                    <span>{formatName}</span> 
                    <span> ${price}</span> 
                </div>

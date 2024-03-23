@@ -42,9 +42,13 @@
 // }
 
 // export default NavBar;
-import React from 'react';
+import React, { useContext } from 'react';
+import CartDropdown from './cartDropdown';
+import { CartContext } from '../context/cart.context';
 
 function NavBar() {
+    const {isCartOpen, setIsCartOpen, totalItems} = useContext(CartContext)
+    const toggleIsCartOpen = () => setIsCartOpen(!isCartOpen)
     return (
         <nav className="navbar">
         <div className="container">
@@ -80,9 +84,11 @@ function NavBar() {
             </div>
             {/* Cart */}
             <div className="navbar-item">
-                <a href="#" className="button">Cart 🛒 <i className="fas fa-shopping-cart"></i></a>
+                <a className="button" onClick={toggleIsCartOpen}>Cart 🛒 <i className="fas fa-shopping-cart"></i><span className='cart-bubble'>({totalItems})</span></a>
             </div>
             </div>
+            { isCartOpen && <CartDropdown />}
+            {/* <CartDropdown /> */}
         </div>
         </nav>
     );
