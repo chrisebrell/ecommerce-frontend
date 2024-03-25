@@ -7,8 +7,8 @@
     padding: 20px;
     border: 1px solid black;
     background-color: white;
-    top: 70px;
-    left: 540px;
+    top: 90px;
+    left: 640px;
     z-index: 5;
   
     .empty-message {
@@ -29,7 +29,7 @@
       color: white;
       cursor: pointer;
       &:hover {
-        background-color: white;
+        background-color: #2692d6;
         color: black;
       }
     }
