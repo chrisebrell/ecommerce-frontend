@@ -1,15 +1,19 @@
 import React, { useContext, useState } from 'react';
-import CartDropdown from './cartDropdown';
+import { Outlet, Link } from 'react-router-dom';
 import { CartContext } from '../context/cart.context';
+import CartDropdown from './cartDropdown';
 import SignInPage from './signIn';
+import { ProductsContext } from '../context/products.context';
 
 function NavBar() {
+    const {categories} = useContext(ProductsContext)
     const {isCartOpen, setIsCartOpen, totalItems} = useContext(CartContext);
     const [showSignInPage, setShowSignInPage] = useState(false);
 
     const toggleIsCartOpen = () => setIsCartOpen(!isCartOpen)
 
     return (
+        <>
         <nav className="navbar">
         <div className="container">
             <div className="navbar-brand"><a href='/'>Simply Shopping</a></div>
@@ -20,9 +24,16 @@ function NavBar() {
                 <div className="navbar-link">Categories</div>
                 <div className="navbar-dropdown">
                     {/* Category options */}
-                    <a href="#" className="navbar-item">Category 1</a>
-                    <a href="#" className="navbar-item">Category 2</a>
-                    <a href="#" className="navbar-item">Category 3</a>
+                    {
+                        categories.map( (category) => (
+                        <Link 
+                            className="navbar-item" 
+                            to='/products' 
+                            state={{category: category._id}} >
+                                {category.name}
+                        </Link>  
+                        ))
+                    }
                 </div>
                 </div>
             </div>
@@ -48,10 +59,11 @@ function NavBar() {
             </div>
             </div>
             { isCartOpen && <CartDropdown />}
-            {/* <CartDropdown /> */}
         </div>
         {showSignInPage && <SignInPage />}
         </nav>
+        <Outlet />
+        </>
     );
 }
 
