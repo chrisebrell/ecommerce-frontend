@@ -1,27 +1,31 @@
+import { CartContext } from "@/contexts/CartContext";
 import Link from "next/link";
+import { useContext } from "react";
 
-export default function Tile({ title, price, images }) {
+export default function Tile({ _id, title, price, images }) {
+  const { addProduct } = useContext(CartContext);
+
   return (
     <div className="h-[230px] w-[180px] bg-gray-500 rounded-sm p-[5px] flex flex-col justify-between">
-      <Link href={"/"}>
-        <div className=" bg-white rounded-sm p-[5px] h-[160px] w-[170px] flex justify-center items-center">
-          <div className="w-auto h-auto object-cover align-center">
-            <img
-              className=" hover:scale-200"
-              src={images[0]}
-              alt="new product"
-            />
-          </div>
+      <Link href={"/product/" + _id}>
+        <div className="bg-white rounded-sm p-[5px] h-[160px] w-[170px] flex justify-center items-center overflow-hidden">
+          <img
+            className="w-full h-full object-contain align-center hover:scale-200 transition-transform duration-300 ease-in-out"
+            src={images[0]}
+            alt="new product"
+          />
         </div>
+
+        {/*break*/}
       </Link>
-      <Link href={"/products/"}>
+      <Link href={"/product/" + _id}>
         <div className=" text-white pl-1 pr-1">
           <h2 className="overflow text-[10px]">{title}</h2>
         </div>
       </Link>
       <div>
         <div className="flex  p-[5px] items-center justify-between text-white pl-1 pr-1">
-          <Link href={"/products/"} className="text-[13px] font-bold">
+          <Link href={"/product/" + _id} className="text-[13px] font-bold">
             $
             {new Intl.NumberFormat("en-US", {
               style: "decimal",
@@ -30,7 +34,10 @@ export default function Tile({ title, price, images }) {
             }).format(parseFloat(price))}
           </Link>
           <Link href={"/"}>
-            <button className="inline-flex items-center justify-center text-white bg-transparent hover:bg-white hover:text-black font-medium rounded-sm text-[8px] border px-1 py-0.5 transition-colors space-x-1">
+            <button
+              onClick={() => addProduct(_id)}
+              className="inline-flex items-center justify-center text-white bg-transparent hover:bg-white hover:text-black font-medium rounded-sm text-[8px] border px-1 py-0.5 transition-colors space-x-1"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"

@@ -1,14 +1,21 @@
 import Link from "next/link";
 import Main from "./global/main";
+import { useContext } from "react";
+import { CartContext } from "@/contexts/CartContext";
 
 export default function Featured({ product }) {
+  const { addProduct } = useContext(CartContext);
+  function addFeaturedToCart() {
+    addProduct(product._id);
+  }
+
   if (!product) {
     return (
       <Main>
         <div className="px-[30px] bg-gray-600">
           <div>
             <h1 className="max-w-[1000px] text-gray-200 text-xl pt-4">
-              New Products
+              Featured product is currently unavailable
             </h1>
             <p>Please try again later!</p>
           </div>
@@ -25,7 +32,7 @@ export default function Featured({ product }) {
             <div className="grid [grid-template-columns:1fr]">
               <span className="flex justify-center md:block [grid-column:1] [grid-row:1]">
                 <img
-                  className=" max-w-[100%] max-h-[200px]"
+                  className=" max-w-[100%] max-h-[200px] "
                   src={product.images[0]}
                   alt="Featured Product"
                 />
@@ -51,7 +58,8 @@ export default function Featured({ product }) {
                   Read More
                 </Link>
                 <Link
-                  href={"/cart/" + product._id}
+                  onClick={addFeaturedToCart}
+                  href={"/"}
                   type="button"
                   className="inline-flex items-center text-white bg-blue-500 border-blue-500 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-sm text-[10px] px-1.5 py-1 focus:outline-none transition-colors"
                 >

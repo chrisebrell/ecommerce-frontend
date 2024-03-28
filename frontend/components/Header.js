@@ -1,7 +1,10 @@
 import Link from "next/link";
 import Main from "./global/main";
+import { useContext } from "react";
+import { CartContext } from "@/contexts/CartContext";
 
 export default function Header() {
+  const { cartProducts } = useContext(CartContext);
   return (
     <Main>
       <header className="px-[30px] bg-gray-800">
@@ -23,8 +26,34 @@ export default function Header() {
               <Link className="cursor-pointer hover:text-white" href={"/"}>
                 Account
               </Link>
-              <Link className="cursor-pointer hover:text-white" href={"/cart"}>
-                Cart (0)
+              <Link
+                className="flex cursor-pointer hover:text-white"
+                href={"/cart"}
+              >
+                <div className="inline-flex items-center justify-center gap-[6px]">
+                  <div className="relative cursor-pointer">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-[18px] h-[18px]"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                      />
+                    </svg>
+                    {/* Overlay the cartProducts.length value */}
+                    {/* <span className="absolute top-[-2px] right-[-5px] bg-gray-200 font-bold text-gray-800 rounded-full text-[7px] px-[3.5px] "> */}
+                    <span className="absolute top-[-4px] right-[-6px] bg-gray-200 font-bold text-gray-800 rounded-full text-[7px] px-[3.5px] h-[14px] w-[14px] flex items-center justify-center leading-none">
+                      {cartProducts.length}
+                    </span>
+                  </div>
+                  Cart
+                </div>
               </Link>
             </div>
           </nav>
