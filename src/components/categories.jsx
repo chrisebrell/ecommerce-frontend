@@ -9,9 +9,10 @@ const Categories = () => {
         <div className="categories-container">
             {
                 categories.map((category) => {
+                    const image = category.imageUrl || 'https://ecommerce-group6.s3.amazonaws.com/1711212204953.jpeg'
                     return (
                     <div key={category._id} className="category-container">
-                        <div className='background-image' style={{backgroundImage: `url(${category.imageUrl})`}}  />
+                        <div className='background-image' style={{backgroundImage: `url(${image})`}}  />
                           <div className='category-body-container'>
                             <Link to='/category/products' state={{category: category._id}}>
                                 <h2>{category.name}</h2>
