@@ -1,12 +1,12 @@
 import '../styles/categories.style.scss'
 import React from 'react';
 import Categories from './categories';
+import VideoComponent from './videoComponent';
 
 const Home = () => {  
     return (
         <>
-            <h1>Simply Shopping</h1>
-            <h2>Shop by Category</h2>
+            <VideoComponent />
             <Categories />
         </>
     )

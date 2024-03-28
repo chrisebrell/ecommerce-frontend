@@ -1,23 +1,33 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom'
 import '../styles/productCard.style.scss'
+import { CartContext } from '../context/cart.context';
 
-const ProductCard = ({ product }) => {
-    // const { title, price, images, properties } = product
-    const defaultImage = product.images[0] || 'https://ecommerce-group6.s3.amazonaws.com/1711212204953.jpeg'
-    
-    // shortening of name 
+// shortening of name 
+export const formatNameFn = (name) => {
     let formatName = ''
-    if (product.title.length > 20) {
-        const splitName = product.title.split(' ')
+    if (name.length > 20) {
+        const splitName = name.split(' ')
         for (let i = 0; i < splitName.length; i++) {
             if (formatName.length < 20) {
                 formatName += splitName[i] + ' '
             }
+        return formatName   
         }
     } else {
-        formatName = product.title
+        formatName = name
+        return formatName
     }
+}
+
+const ProductCard = ({ product }) => {
+    const { addItemToCart } = useContext(CartContext)
+    const addProductToCart = () => addItemToCart(product)
+    // const { title, price, images, properties } = product
+    const defaultImage = product.images[0] || 'https://ecommerce-group6.s3.amazonaws.com/1711212204953.jpeg'
+    
     // console.log(properties);
+    const formatName = formatNameFn(product.title)
     return (
         <>
             <div className="product-card-container">
@@ -26,6 +36,7 @@ const ProductCard = ({ product }) => {
                    <span>{formatName}</span> 
                    <span> ${product.price}</span> 
                </div>
+                <button className='button-container' onClick={addProductToCart}>Add to Cart</button>
                 <Link to='/description' state={{ product: product, defaultImage}}><button className='button-container'>VIEW</button></Link>
             </div>
         </>
