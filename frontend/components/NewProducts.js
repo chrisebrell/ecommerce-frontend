@@ -22,7 +22,7 @@ export default function NewProducts({ product }) {
       <div className="px-[30px] bg-gray-400">
         <div className="flex flex-col items-center">
           <div className="max-w-[1000px] w-full">
-            <h1 className="text-gray-800 font-semibold text-xl pt-4">
+            <h1 className="text-gray-800 font-semibold text-center text-xl pt-4 ">
               New Products
             </h1>
           </div>

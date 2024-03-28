@@ -38,7 +38,7 @@ export default function Featured({ product }) {
                 />
               </span>
               <div className="[grid-column:1] [grid-row:1] top-0 left-0 overflow-hidden ">
-                <div className="text-sm absolute rounded-lg bg-gray-400 text-gray-200 p-1">
+                <div className="text-sm absolute rounded-lg bg-gray-400 text-gray-200 px-[8px] py-[3px]">
                   Featured
                 </div>
               </div>

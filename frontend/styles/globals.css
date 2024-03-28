@@ -25,3 +25,24 @@
   white-space: nowrap;
   max-width: auto;
 }
+
+.fixed-layout-table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.fixed-layout-table th,
+.fixed-layout-table td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.product-column {
+  width: 50%;
+}
+
+.quantity-column,
+.price-column {
+  width: 25%;
+}
