@@ -1,16 +1,20 @@
 import React, { useContext, useState } from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, Link, useNavigate } from 'react-router-dom';
 import { CartContext } from '../context/cart.context';
+import { ProductsContext } from '../context/products.context';
 import CartDropdown from './cartDropdown';
 import SignInPage from './signIn';
-import { ProductsContext } from '../context/products.context';
 
 function NavBar() {
-    const {categories} = useContext(ProductsContext)
+    const navigate = useNavigate()
+    const { categories, setSearchString } = useContext(ProductsContext)
     const {isCartOpen, setIsCartOpen, totalItems} = useContext(CartContext);
     const [showSignInPage, setShowSignInPage] = useState(false);
-
     const toggleIsCartOpen = () => setIsCartOpen(!isCartOpen)
+    const handleChange = (e) => {
+        setSearchString(e.target.value.toLowerCase())
+        navigate('/products')
+    }
 
     return (
         <>
@@ -39,7 +43,7 @@ function NavBar() {
             </div>
             {/* Search bar */}
             <div className="navbar-item">
-                <input type="text" placeholder="Search" />
+                <input type="text" onChange={handleChange} placeholder="Search" />
             </div>
             {/* Shop */}
             <div className="navbar-item">

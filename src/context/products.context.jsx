@@ -6,8 +6,10 @@ export const ProductsContext = createContext({
 });
 
 export const ProductProvider = ({children}) => {
+    const [data, setData] = useState([])
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
+    const [searchString, setSearchString] = useState('')
 
     useEffect( () => {
         const fetchData = async () => {
@@ -29,15 +31,27 @@ export const ProductProvider = ({children}) => {
             const response = await fetch(url)
             const data = await response.json()
             if (data.length) {
-                setProducts(data)
+                setData(data)
             }
         }
         fetchData()
     }, [])
+    // Logic to search a product
+    useEffect( () => {
+        const filteredProducts = data.filter((product) => {
+            const search = product.title + product.description
+            if (search.toLowerCase().includes(searchString)) {
+                return product
+            } 
+        })
+        setProducts(filteredProducts)        
+    }, [data, searchString])
 
     const value = {
         products, 
-        categories
+        categories,
+        searchString,
+        setSearchString
     }
     return (
         <ProductsContext.Provider value={value}>{children}</ProductsContext.Provider>
