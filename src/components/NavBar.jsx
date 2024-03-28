@@ -21,14 +21,14 @@ function NavBar() {
             <div className="navbar-start">
                 {/* Dropdown for categories */}
                 <div className="navbar-item has-dropdown">
-                <div className="navbar-link">Categories</div>
+                <div className="navbar-link"><Link to='/categories'>Categories</Link></div>
                 <div className="navbar-dropdown">
                     {/* Category options */}
                     {
                         categories.map( (category) => (
-                        <Link 
+                        <Link key={category._id}
                             className="navbar-item" 
-                            to='/products' 
+                            to='/category/products' 
                             state={{category: category._id}} >
                                 {category.name}
                         </Link>  

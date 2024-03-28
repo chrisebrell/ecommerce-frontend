@@ -13,7 +13,7 @@ const Categories = () => {
                     <div key={category._id} className="category-container">
                         <div className='background-image' style={{backgroundImage: `url(${category.imageUrl})`}}  />
                           <div className='category-body-container'>
-                            <Link to='/products' state={{category: category._id}}>
+                            <Link to='/category/products' state={{category: category._id}}>
                                 <h2>{category.name}</h2>
                                 <p>Shop Now</p>
                             </Link>    
