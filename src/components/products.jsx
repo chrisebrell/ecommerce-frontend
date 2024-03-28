@@ -1,5 +1,4 @@
-import { useState, useContext, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useContext } from "react";
 import { ProductsContext } from "../context/products.context";
 import ProductCard from "./productCard";
 import '../styles/products.style.scss'
