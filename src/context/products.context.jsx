@@ -18,7 +18,11 @@ export const ProductProvider = ({children}) => {
             const response = await fetch(url)
             const data = await response.json()
             if (data.length) {
-                setCategories(data)
+                setCategories(data.filter((category) => {
+                    if (!category.parent) {
+                        return category
+                    }
+                }))
                 // console.log(data)
             }
         }
