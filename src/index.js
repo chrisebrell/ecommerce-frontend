@@ -1,23 +1,50 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { ProductProvider } from './context/products.context';
-import { CartProvider } from './context/cart.context';
+import NewProducts from "./components/NewProducts";
+import Header from "./components/Header";
+import { mongooseConnect } from "./lib/mongoose";
+import { Product } from "./models/Product";
+import { Settings } from "./models/Setting";
+import Main from "./components/main";
+import Featured from "./components/Featured";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <ProductProvider>
-      <CartProvider>
-        <App />
-      </CartProvider>
-    </ProductProvider>
-  </React.StrictMode>
-);
+export default function HomePage({ featuredProduct, newProducts }) {
+  // console.log({ newProducts });
+  //console.log({featuredProduct})
+  return (
+    <div>
+      <Main>
+        <Header />
+        <Featured product={featuredProduct} />
+        <NewProducts product={newProducts} />
+      </Main>
+    </div>
+  );
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+export async function getServerSideProps() {
+  try {
+    await mongooseConnect();
+    const featuredProductSetting = await Settings.findOne({
+      name: "featuredProductId",
+    });
+    // Proceed with your logic only after successful connection
+    const featuredProductId = featuredProductSetting.value;
+    const featuredProduct = await Product.findById(featuredProductId);
+    const newProducts = await Product.find({}, null, {
+      sort: { _id: -1 },
+      limit: 16,
+    });
+
+    return {
+      props: {
+        featuredProduct: JSON.parse(JSON.stringify(featuredProduct)),
+        newProducts: JSON.parse(JSON.stringify(newProducts)),
+      },
+    };
+  } catch (error) {
+    console.error("Database connection or operation failed", error);
+    // Handle the error appropriately
+    return {
+      props: {},
+    };
+  }
+}

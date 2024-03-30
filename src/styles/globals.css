@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.logoImage {
+  width: 100px;
+  height: 50px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.overflow {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.noOverflow {
+  white-space: nowrap;
+}
+
+.cartOverflow {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: auto;
+}
+
+.fixed-layout-table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.fixed-layout-table th,
+.fixed-layout-table td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.product-column {
+  width: 50%;
+}
+
+.quantity-column,
+.price-column {
+  width: 25%;
+}
+
+.select-wrapper {
+  position: relative;
+  width: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+select {
+  appearance: none;
+  width: 100%;
+  padding: 10px 15px;
+  border: none;
+  background-color: #f0f0f0;
+  color: #333;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #333;
+}
+
+html,
+body,
+#root,
+Main {
+  height: 100%;
+  margin: 0;
+}
+
+.Main {
+  display: flex;
+  flex-direction: column;
+}
+
+.bg-gray-400 {
+  flex: 1; /* Make the div take up the remaining space */
+}
+.scale-size {
+  transform: scale(0.5); /* Reduces size to 75% of the original */
+}
+
+.btn-primary {
+  padding: 8px 16px;
+  background-color: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+.btn-primary:hover {
+  background-color: darkblue;
+}
